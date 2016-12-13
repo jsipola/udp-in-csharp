@@ -40,4 +40,24 @@ public class UDPListener
         listener.Close();
         return 0;
     }
-} // end of class UDPListener
+    private void parseLine(string line)
+    {
+        char[] chars = {';', ' '};
+        string[] parsed = line.Split(chars);
+        try 
+        {
+            string cmd = parsed[0];
+            if (cmd =="pos" ){
+                string x_loc = parsed[1];
+                string y_loc = parsed[2];
+                string alt = parsed[3];
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+    }
+}
+
+//} // end of class UDPListener
